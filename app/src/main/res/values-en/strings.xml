@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Basic UI</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="maybe">Maybe</string>
+    <string name="warning">Warning</string>
+    <string name="close_app">Close the app?</string>
+    <string name="hallo">Hallo</string>
+</resources>

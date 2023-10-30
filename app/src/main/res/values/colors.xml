@@ -5,5 +5,5 @@
     <color name="primary">#9C27B0</color>
     <color name="primaryVariant">#711B80</color>
     <color name="accent">#4bcd32</color>
-    <color name="accentVariant">#2D7A1F</color>
+    <color name="alertText">#2C71FA</color>
 </resources>

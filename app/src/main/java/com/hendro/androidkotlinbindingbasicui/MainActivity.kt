@@ -1,17 +1,16 @@
 package com.hendro.androidkotlinbindingbasicui
 
+import android.R
+import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Intent
-import android.os.Build
+import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import com.google.android.material.snackbar.Snackbar
 import com.hendro.androidkotlinbindingbasicui.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,45 +22,46 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onStart() {
         super.onStart()
 
         //toast
         binding.btToast.setOnClickListener() {
-            val text = "Hallo"
-            val duration = Toast.LENGTH_SHORT
-
-            val toast = Toast.makeText(this, text, duration)
-            toast.show()
+            Toast.makeText(this, R.string.hallo, Toast.LENGTH_SHORT).show()
         }
 
-        binding.btNotifikasi.setOnClickListener() {
-
+        binding.btSnack.setOnClickListener() {
+            Snackbar.make(binding.root, R.string.close_app, Snackbar.LENGTH_SHORT)
+                .setAction(R.string.yes) {
+                    finish()
+                }
+                .show()
         }
 
         binding.btKeluar.setOnClickListener() {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle(R.string.warning)
-            builder.setMessage(R.string.close_app)
 
-            builder.setPositiveButton(R.string.yes) { dialog, which ->
-                finish()
-            }
+            val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+            builder
+                .setTitle(R.string.warning)
+                .setMessage(R.string.close_app)
+                .setPositiveButton(R.string.yes) { dialog, which ->
+                    finish()
+                }
+                .setNegativeButton(R.string.no) { dialog, which ->
+                    dialog.cancel()
+                }
 
-            builder.setNegativeButton(R.string.no) { dialog, which ->
-                Toast.makeText(
-                    applicationContext,
-                    android.R.string.no, Toast.LENGTH_SHORT
-                ).show()
-            }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
 
-            builder.setNeutralButton(R.string.maybe) { dialog, which ->
-                Toast.makeText(
-                    applicationContext,
-                    R.string.maybe, Toast.LENGTH_SHORT
-                ).show()
-            }
-            builder.show()
+            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(R.color.alertText)
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(R.color.alertText)
+
+        }
+
+        binding.btNotifikasi.setOnClickListener(){
+
         }
     }
 }
