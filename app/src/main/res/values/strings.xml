@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Basic UI</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="maybe">Mungkin</string>
+    <string name="warning">Perhatian</string>
+    <string name="close_app">Mau tutup aplikasi ini?</string>
+    <string-array name="prodi">
+        <item> Teknik Informatika </item>
+        <item> Teknik Industri </item>
+        <item> Ekonomi </item>
+        <item> Desain Komunikasi Visual </item>
+    </string-array>
+</resources>

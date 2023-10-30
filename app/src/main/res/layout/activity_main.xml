@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryVariant"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap" />
+
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama lengkap" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat domisili sesuai kartu identitas" />
+
+            <EditText
+                android:id="@+id/et_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:hint="Alamat"
+                android:inputType="textMultiLine"
+                android:lines="3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Program Studi" />
+
+            <Spinner
+                android:id="@+id/sp_prodi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/prodi"
+                android:padding="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Domisili" />
+
+            <RadioGroup
+                android:id="@+id/rg_domisili"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_DK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Dalam Kota" />
+
+                <RadioButton
+                    android:id="@+id/rb_LK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Luar Kota" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hobi" />
+
+            <CheckBox
+                android:id="@+id/cb_teknologi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teknologi" />
+
+            <CheckBox
+                android:id="@+id/cb_kuliner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:text="Kuliner" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_detil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/accent"
+                    android:hint="LIHAT DETIL"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/dp_5" />
+
+                <Button
+                    android:id="@+id/bt_toast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/accent"
+                    android:hint="TOAST"
+                    app:cornerRadius="@dimen/dp_5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_notifikasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/accent"
+                    android:hint="NOTIF"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/dp_5" />
+
+                <Button
+                    android:id="@+id/bt_snack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/accent"
+                    android:hint="SNACK"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/dp_5" />
+
+                <Button
+                    android:id="@+id/bt_keluar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/accent"
+                    android:hint="KELUAR"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/dp_5" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
