@@ -1,34 +1,47 @@
 package com.hendro.androidkotlinbindingbasicui
 
-import android.R
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.app.Notification
+import android.app.PendingIntent
+import android.app.TaskStackBuilder
 import android.content.DialogInterface
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.google.android.material.snackbar.Snackbar
 import com.hendro.androidkotlinbindingbasicui.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var CHANNEL_ID = "MyChannel"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        setSupportActionBar(binding.toolbar)
     }
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint("ResourceAsColor", "MissingPermission")
     override fun onStart() {
         super.onStart()
 
         //toast
         binding.btToast.setOnClickListener() {
-            Toast.makeText(this, R.string.hallo, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, resources.getString(R.string.hallo), Toast.LENGTH_SHORT).show()
         }
 
         binding.btSnack.setOnClickListener() {
@@ -60,8 +73,104 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.btNotifikasi.setOnClickListener(){
+        binding.btNotifikasi.setOnClickListener() {
+            //hanya notifikasi
+            /*
+            val mChannel = NotificationChannelCompat.Builder(CHANNEL_ID, NotificationManagerCompat.IMPORTANCE_DEFAULT).apply {
+                setName("channel name") // Must set! Don't remove
+                setDescription("channel description")
+                setLightsEnabled(true)
+                setLightColor(Color.RED)
+                setVibrationEnabled(true)
+                setVibrationPattern(longArrayOf(100, 200, 300, 400, 500, 400, 300, 200, 400))
+            }.build()
 
+            NotificationManagerCompat.from(applicationContext).createNotificationChannel(mChannel)
+
+            val notification: Notification = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
+                .setSmallIcon(R.drawable.baseline_lightbulb_24)
+                .setContentTitle(getString(R.string.hallo))
+                .setContentText(getString(R.string.description))
+                .build()
+            NotificationManagerCompat.from(applicationContext).notify(1, notification)
+             */
+
+            //dengan pending Intent
+            val resultIntent = Intent(this, NotifActivity::class.java) //intent
+
+            val resultPendingIntent: PendingIntent? = TaskStackBuilder.create(this).run {
+                addNextIntentWithParentStack(resultIntent)
+                getPendingIntent(
+                    0,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+            }
+
+            val mChannel = NotificationChannelCompat.Builder(
+                CHANNEL_ID,
+                NotificationManagerCompat.IMPORTANCE_DEFAULT
+            ).apply {
+                setName("channel name") // Must set! Don't remove
+                setDescription("channel description")
+                setLightsEnabled(true)
+                setLightColor(Color.RED)
+                setVibrationEnabled(true)
+                setVibrationPattern(longArrayOf(100, 200, 300, 400, 500, 400, 300, 200, 400))
+            }.build()
+
+            NotificationManagerCompat.from(applicationContext).createNotificationChannel(mChannel)
+
+            val notification: Notification =
+                NotificationCompat.Builder(applicationContext, CHANNEL_ID)
+                    .setSmallIcon(R.drawable.baseline_lightbulb_24)
+                    .setContentTitle(getString(R.string.hallo))
+                    .setContentText(getString(R.string.description))
+                    .setContentIntent(resultPendingIntent)
+                    .build()
+            NotificationManagerCompat.from(applicationContext).notify(1, notification)
+        }
+
+        binding.btDetil.setOnClickListener() {
+            //todo: Intent
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_item, menu)
+
+        //khusus proses search
+        val item = menu.findItem(R.id.menu_cari)
+        val searchView = item.actionView as SearchView?
+        searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(s: String): Boolean { //ketika tekan enter
+                Toast.makeText(applicationContext, s, Toast.LENGTH_SHORT).show()
+                return false
+            }
+
+            override fun onQueryTextChange(s: String): Boolean { //ketika text berubah
+                return false
+            }
+        })
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_fragment -> {
+                Toast.makeText(applicationContext, R.string.fragment, Toast.LENGTH_SHORT).show()
+                return true
+            }
+
+            R.id.menu_recycler_iew -> {
+                Toast.makeText(applicationContext, R.string.recycler_view, Toast.LENGTH_SHORT)
+                    .show()
+                return true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }

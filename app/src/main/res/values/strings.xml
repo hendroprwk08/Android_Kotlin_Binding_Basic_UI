@@ -6,6 +6,10 @@
     <string name="maybe">Mungkin</string>
     <string name="warning">Perhatian</string>
     <string name="close_app">Mau tutup aplikasi ini?</string>
+    <string name="find">Temukan</string>
+    <string name="fragment" translatable="false">Fragment</string>
+    <string name="recycler_view" translatable="false">RecyclerView</string>
+    <string name="description">Senang mencoba Kotlin Basic UI</string>
     <string-array name="prodi">
         <item> Teknik Informatika </item>
         <item> Teknik Industri </item>
