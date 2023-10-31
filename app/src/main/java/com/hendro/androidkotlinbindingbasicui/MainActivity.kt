@@ -75,10 +75,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.btNotifikasi.setOnClickListener() {
             //hanya notifikasi
-            /*
             val mChannel = NotificationChannelCompat.Builder(CHANNEL_ID, NotificationManagerCompat.IMPORTANCE_DEFAULT).apply {
-                setName("channel name") // Must set! Don't remove
-                setDescription("channel description")
+                setName(getString(R.string.hallo)) // Must set! Don't remove
+                setDescription(getString(R.string.description))
                 setLightsEnabled(true)
                 setLightColor(Color.RED)
                 setVibrationEnabled(true)
@@ -93,9 +92,9 @@ class MainActivity : AppCompatActivity() {
                 .setContentText(getString(R.string.description))
                 .build()
             NotificationManagerCompat.from(applicationContext).notify(1, notification)
-             */
 
             //dengan pending Intent
+            /*
             val resultIntent = Intent(this, NotifActivity::class.java) //intent
 
             val resultPendingIntent: PendingIntent? = TaskStackBuilder.create(this).run {
@@ -110,8 +109,8 @@ class MainActivity : AppCompatActivity() {
                 CHANNEL_ID,
                 NotificationManagerCompat.IMPORTANCE_DEFAULT
             ).apply {
-                setName("channel name") // Must set! Don't remove
-                setDescription("channel description")
+                setName(getString(R.string.hallo)) // Must set! Don't remove
+                setDescription(getString(R.string.description))
                 setLightsEnabled(true)
                 setLightColor(Color.RED)
                 setVibrationEnabled(true)
@@ -128,6 +127,7 @@ class MainActivity : AppCompatActivity() {
                     .setContentIntent(resultPendingIntent)
                     .build()
             NotificationManagerCompat.from(applicationContext).notify(1, notification)
+            */
         }
 
         binding.btDetil.setOnClickListener() {
