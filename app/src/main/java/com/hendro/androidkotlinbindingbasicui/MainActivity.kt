@@ -3,15 +3,15 @@ package com.hendro.androidkotlinbindingbasicui
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Notification
-import android.app.PendingIntent
-import android.app.TaskStackBuilder
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.RadioButton
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +25,7 @@ import com.hendro.androidkotlinbindingbasicui.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var CHANNEL_ID = "MyChannel"
+    lateinit var radioButton: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -131,7 +132,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btDetil.setOnClickListener() {
-            //todo: Intent
+            //ambi nilai dari radio group
+            val selectedOption: Int = binding.rgDomisili!!.checkedRadioButtonId
+            radioButton = findViewById(selectedOption)
+            var domisili:String = radioButton.text.toString()
+
+            val bundle = Bundle()
+            bundle.putString("b_nama", binding.etNama.text.toString())
+            bundle.putString("b_alamat", binding.etAlamat.text.toString())
+            bundle.putString("b_prodi", binding.spProdi.selectedItem.toString())
+            bundle.putString("b_domisili", domisili)
+            bundle.putBoolean("b_teknologi", binding.cbTeknologi.isChecked)
+            bundle.putBoolean("b_kuliner", binding.cbKuliner.isChecked)
+
+            val intent = Intent(this, DetilActivity::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
     }
 
