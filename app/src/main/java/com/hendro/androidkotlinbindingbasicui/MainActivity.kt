@@ -175,7 +175,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_fragment -> {
-                Toast.makeText(applicationContext, R.string.fragment, Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, FragmentActivity::class.java)
+                startActivity(intent)
                 return true
             }
 

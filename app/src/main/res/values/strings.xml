@@ -16,4 +16,8 @@
         <item> Ekonomi </item>
         <item> Desain Komunikasi Visual </item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Halo, aku fragment baru</string>
+    <string name="fragment_2">Fragment 2</string>
+    <string name="fragment_1">Fragment 1</string>
 </resources>

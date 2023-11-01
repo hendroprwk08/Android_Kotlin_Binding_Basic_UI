@@ -3,7 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#9C27B0</color>
-    <color name="primaryVariant">#711B80</color>
+    <color name="primaryTint">#9F30B3</color>
+    <color name="primaryShade">#711B80</color>
     <color name="accent">#4bcd32</color>
     <color name="alertText">#2C71FA</color>
 </resources>
