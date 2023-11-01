@@ -33,33 +33,28 @@ class RecyclerViewActivity : AppCompatActivity() {
     }
 
     fun loadData(){
+        //masukkan data
+        temanList.add(Teman("Andri Dewanto", "Klub Sepak Takraw", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
+        temanList.add(Teman("Sutejo", "Ka Prodi", "https://img.freepik.com/free-photo/handsome-young-man-with-new-stylish-haircut_176420-19636.jpg"))
+        temanList.add(Teman("Anggita", "Dosen Kimia", "https://img.freepik.com/premium-photo/portrait-confident-beautiful-brunette-woman-turning-face-camera-with-dreamy-look-white_1258-19144.jpg"))
+        temanList.add(Teman("Andri Dewanto", "Klub Sepak Takraw", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
+        temanList.add(Teman("Dona", "Dossen Matematika", "https://img.freepik.com/free-photo/portrait-young-woman-with-natural-make-up_23-2149084942.jpg"))
+        temanList.add(Teman("Yunita", "Klub Bola", "https://img.freepik.com/free-photo/beautiful-woman-with-black-jacket_144627-21704.jpg"))
+        temanList.add(Teman("Desta", "Ipar", "https://img.freepik.com/free-photo/elegant-senior-man-posing-suit_23-2149488009.jpg"))
+        temanList.add(Teman("Baim", "Ipar", "https://img.freepik.com/free-psd/portrait-senior-man-smiling_23-2150115978.jpg"))
+        temanList.add(Teman("El", "Mertua", "https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg"))
+        temanList.add(Teman("Hasan", "Tek Industri", "https://img.freepik.com/free-photo/man-suit-with-raised-eyebrow_1194-1005.jpg"))
+
         //set recyclerview adapter
         recyclerViewAdapter = RecycleViewAdapter(temanList)
+
+        // refresh adapter
+        recyclerViewAdapter.notifyDataSetChanged()
 
         val layoutManager = GridLayoutManager(this, 1) //jumlah kolom 1
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.itemAnimator = DefaultItemAnimator()
         binding.recyclerView.adapter = recyclerViewAdapter
-
-        //masukkan data
-        temanList.add(Teman("Andri Dewanto", "Klub Sepak Takraw", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Sutejo", "Tek Industri", "https://img.freepik.com/free-photo/handsome-young-man-with-new-stylish-haircut_176420-19636.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Pacar 1", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Klub Sepak Takraw", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Ipar", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Mantan 1", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Klub Bola", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Ipar", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Ipar", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Mertua", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Tek Industri", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Pacar 2", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Tetangga", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Mantan 2", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-        temanList.add(Teman("Andri Dewanto", "Temen", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"))
-
-        // refresh adapter
-        recyclerViewAdapter.notifyDataSetChanged()
 
         binding.recyclerView.visibility = View.VISIBLE
         binding.progressBar.visibility = View.GONE

@@ -16,17 +16,10 @@
         app:title="@string/app_name"
         app:titleTextColor="@color/white" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_view"
-        android:padding="@dimen/dp_16"
-        android:visibility="gone"/>
+        android:padding="@dimen/dp_16"/>
 
 </LinearLayout>
