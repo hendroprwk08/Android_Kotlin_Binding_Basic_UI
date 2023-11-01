@@ -1,10 +1,8 @@
 package com.hendro.androidkotlinbindingbasicui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.hendro.androidkotlinbindingbasicui.databinding.ActivityFragmentBinding
 
 
@@ -50,11 +48,11 @@ class FragmentActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
 
         if(status == 0){ // add
-            fragmentTransaction.add(R.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
+            fragmentTransaction.add(RecycleViewAdapter.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
                 .addToBackStack(null)
                 .commit()
         }else{ // replace
-            fragmentTransaction.replace(R.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
+            fragmentTransaction.replace(RecycleViewAdapter.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
                 .addToBackStack(null)
                 .commit()
         }

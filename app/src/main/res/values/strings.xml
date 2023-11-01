@@ -20,4 +20,6 @@
     <string name="hello_blank_fragment">Halo, aku fragment baru</string>
     <string name="fragment_2">Fragment 2</string>
     <string name="fragment_1">Fragment 1</string>
+    <string name="judul">Judul</string>
+    <string name="subtitle">Subtitle</string>
 </resources>

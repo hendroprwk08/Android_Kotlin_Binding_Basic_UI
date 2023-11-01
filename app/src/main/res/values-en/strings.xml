@@ -11,4 +11,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_2">2nd Fragment</string>
     <string name="fragment_1">1st Fragment</string>
+    <string name="judul">Judul</string>
+    <string name="subtitle">Subtitle</string>
 </resources>

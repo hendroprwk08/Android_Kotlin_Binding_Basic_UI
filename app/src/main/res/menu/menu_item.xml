@@ -11,7 +11,7 @@
         android:title="@string/fragment"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/menu_recycler_iew"
+    <item android:id="@+id/menu_recycler_view"
         app:showAsAction="never"
         android:title="@string/recycler_view"/>
 </menu>

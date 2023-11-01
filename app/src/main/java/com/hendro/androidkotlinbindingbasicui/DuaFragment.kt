@@ -16,6 +16,6 @@ class DuaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dua, container, false)
+        return inflater.inflate(RecycleViewAdapter.layout.fragment_dua, container, false)
     }
 }
