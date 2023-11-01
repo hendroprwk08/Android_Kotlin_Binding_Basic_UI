@@ -2,6 +2,7 @@ package com.hendro.androidkotlinbindingbasicui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hendro.androidkotlinbindingbasicui.databinding.ActivityRecyclerViewBinding
@@ -35,7 +36,7 @@ class RecyclerViewActivity : AppCompatActivity() {
         //set recyclerview adapter
         recyclerViewAdapter = RecycleViewAdapter(temanList)
 
-        val layoutManager = GridLayoutManager(this, 2)
+        val layoutManager = GridLayoutManager(this, 1) //jumlah kolom 1
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.itemAnimator = DefaultItemAnimator()
         binding.recyclerView.adapter = recyclerViewAdapter
@@ -59,5 +60,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         // refresh adapter
         recyclerViewAdapter.notifyDataSetChanged()
+
+        binding.recyclerView.visibility = View.VISIBLE
+        binding.progressBar.visibility = View.GONE
     }
 }

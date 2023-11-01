@@ -48,11 +48,11 @@ class FragmentActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
 
         if(status == 0){ // add
-            fragmentTransaction.add(RecycleViewAdapter.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
+            fragmentTransaction.add(R.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
                 .addToBackStack(null)
                 .commit()
         }else{ // replace
-            fragmentTransaction.replace(RecycleViewAdapter.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
+            fragmentTransaction.replace(R.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
                 .addToBackStack(null)
                 .commit()
         }

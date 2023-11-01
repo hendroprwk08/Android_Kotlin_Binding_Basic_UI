@@ -2,21 +2,21 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_margin="10dp"
-    app:cardElevation="@dimen/dp_5">
+    android:layout_height="@dimen/dp_120"
+    android:layout_margin="@dimen/dp_2"
+    android:padding="@dimen/dp_5">
 
     <RelativeLayout
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_120"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="@dimen/dp_10">
 
         <ImageView
             android:id="@+id/imageview"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true" />
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_10"
             android:layout_marginLeft="87dp"
             android:layout_toEndOf="@+id/imageview"
             android:text="@string/judul"
@@ -41,7 +41,7 @@
             android:layout_below="@+id/tv_nama"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_2"
             android:layout_toEndOf="@+id/imageview"
             android:text="@string/subtitle"
