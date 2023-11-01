@@ -131,6 +131,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/accent"
                     android:text="TOAST"
+                    android:textColor="@color/white"
                     app:cornerRadius="@dimen/dp_5" />
 
             </LinearLayout>

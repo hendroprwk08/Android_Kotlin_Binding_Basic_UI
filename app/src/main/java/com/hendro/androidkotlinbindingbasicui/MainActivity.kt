@@ -71,7 +71,6 @@ class MainActivity : AppCompatActivity() {
 
             dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(R.color.alertText)
             dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(R.color.alertText)
-
         }
 
         binding.btNotifikasi.setOnClickListener() {
@@ -181,8 +180,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu_recycler_iew -> {
-                Toast.makeText(applicationContext, R.string.recycler_view, Toast.LENGTH_SHORT)
-                    .show()
+                val intent = Intent(this, RecyclerViewActivity::class.java)
+                startActivity(intent)
                 return true
             }
 

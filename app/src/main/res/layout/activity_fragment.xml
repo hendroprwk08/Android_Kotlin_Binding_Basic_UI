@@ -29,6 +29,7 @@
             android:backgroundTint="@color/accent"
             app:cornerRadius="@dimen/dp_5"
             android:text="@string/fragment_1"
+            android:textColor="@color/white"
             android:layout_margin="@dimen/dp_5"/>
 
         <Button
@@ -39,6 +40,7 @@
             android:backgroundTint="@color/accent"
             app:cornerRadius="@dimen/dp_5"
             android:text="@string/fragment_2"
+            android:textColor="@color/white"
             android:layout_margin="@dimen/dp_5"/>
     </LinearLayout>
 
