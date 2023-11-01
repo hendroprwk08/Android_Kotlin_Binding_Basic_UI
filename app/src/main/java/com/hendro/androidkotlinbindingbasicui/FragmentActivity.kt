@@ -49,7 +49,7 @@ class FragmentActivity : AppCompatActivity() {
     private fun setFragment(fragment: Fragment, status: Int) {
         val fragmentTransaction = fragmentManager.beginTransaction()
 
-        if(status.equals(0)){ // add
+        if(status == 0){ // add
             fragmentTransaction.add(R.id.frame_layout, fragment, fragment.javaClass.getSimpleName())
                 .addToBackStack(null)
                 .commit()
