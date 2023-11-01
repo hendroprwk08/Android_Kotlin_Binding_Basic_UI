@@ -14,20 +14,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidKotlinBindingBasicUI"
         tools:targetApi="31">
+
         <activity
             android:name=".RecyclerViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".FragmentActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".DetilActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".NotifActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
