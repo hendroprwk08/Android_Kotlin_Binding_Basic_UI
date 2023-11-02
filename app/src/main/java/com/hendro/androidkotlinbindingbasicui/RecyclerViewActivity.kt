@@ -55,8 +55,5 @@ class RecyclerViewActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.itemAnimator = DefaultItemAnimator()
         binding.recyclerView.adapter = recyclerViewAdapter
-
-        binding.recyclerView.visibility = View.VISIBLE
-        binding.progressBar.visibility = View.GONE
     }
 }
